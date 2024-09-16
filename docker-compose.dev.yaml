@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+    networks:
+      - lafinas
+
+  db:
+    image: postgres
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=lafinas
+      - POSTGRES_PASSWORD=lafinas
+      - POSTGRES_DB=lafinas
+    networks:
+      - lafinas
+
+volumes:
+  db_data:
+
+networks:
+  lafinas:
+    driver: bridge
