@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  app:
+  backend:
     build:
       context: .
       dockerfile: Dockerfile.dev
@@ -13,7 +13,7 @@ services:
     depends_on:
       - db
     networks:
-      - lafinas
+      - lafinas-network
 
   db:
     image: postgres
@@ -26,11 +26,11 @@ services:
       - POSTGRES_PASSWORD=lafinas
       - POSTGRES_DB=lafinas
     networks:
-      - lafinas
+      - lafinas-network
 
 volumes:
   db_data:
 
 networks:
-  lafinas:
-    driver: bridge
+  lafinas-network:
+    external: true

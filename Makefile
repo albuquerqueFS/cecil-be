@@ -7,3 +7,11 @@ help:
 .PHONY: docker-up
 docker-up:
 	docker compose -f docker-compose.dev.yaml up --build
+
+.PHONY: makemigrations
+makemigrations:
+	docker exec -it lafinas-app-1 python manage.py makemigrations
+
+.PHONY: migrate
+migrate:
+	docker exec -it lafinas-app-1 python manage.py migrate

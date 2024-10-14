@@ -1,5 +1,6 @@
 from django.contrib import admin
-from app.models import User
+from app.models import User, Investment, Movement
 
-# Register your models here.
-admin.register(User)
+admin.site.register(Investment)
+admin.site.register(Movement)
+admin.site.register(User)

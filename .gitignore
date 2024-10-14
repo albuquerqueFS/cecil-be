@@ -1,2 +1,35 @@
-/__pycache__
+# Ignore compiled Python files
+*.pyc
+
+# Ignore the virtual environment
+.venv/
+
+__pycache__
+
+__pycache__/
+
+# Ignore the Django secret key
+secret_key.txt
+
+# Ignore the database file
+db.sqlite3
+
+# Ignore static files
+staticfiles/
+
+# Ignore media files
+media/
+
+# Ignore log files
+*.log
+
+# Ignore environment-specific settings
 .env
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+yarn-error.log
