@@ -58,3 +58,24 @@ MOVEMENTS_POST_BODY = openapi.Schema(
     },
     additional_properties=False,
 )
+
+INVESTMENT_POST_BODY = openapi.Schema(
+    type=openapi.TYPE_OBJECT,
+    required=["value", "name", "types", "category"],
+    properties={
+        "value": openapi.Schema(
+            type=openapi.TYPE_NUMBER,
+        ),
+        "name": openapi.Schema(
+            type=openapi.TYPE_STRING,
+        ),
+        "types": openapi.Schema(
+            type=openapi.TYPE_STRING,
+            enum=["CRYPTO", "STOCK"],
+        ),
+        "category": openapi.Schema(
+            type=openapi.TYPE_STRING,
+        ),
+    },
+    additional_properties=False,
+)
