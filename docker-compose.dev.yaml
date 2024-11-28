@@ -10,6 +10,13 @@ services:
     volumes:
       - .:/app
     command: python manage.py runserver 0.0.0.0:8000
+    environment:
+      - DEBUG=true
+      - DB_NAME=lafinas
+      - DB_USER=lafinas
+      - DB_PASSWORD=lafinas
+      - DB_HOST=db
+      - DB_PORT=5432
     depends_on:
       - db
     networks:
