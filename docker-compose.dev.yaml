@@ -17,6 +17,7 @@ services:
       - DB_PASSWORD=lafinas
       - DB_HOST=db
       - DB_PORT=5432
+      - SWAGGER_JSON=/schema.yml
     depends_on:
       - db
     networks:

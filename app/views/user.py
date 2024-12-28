@@ -14,7 +14,7 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     permission_classes = []
 
-    @swagger_auto_schema(request_body=USER_CREATION_BODY)
+    # @swagger_auto_schema(request_body=USER_CREATION_BODY)
     def create(self, request):
         serializer = UserSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
